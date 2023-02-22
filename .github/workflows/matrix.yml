@@ -2,7 +2,7 @@ name: Matrix workflow
 on: push
 env:
   MY_ENV: ${{ contains('Hello World','llo') }}
-  NEW_ENV: ${{ joins('Hello World',',') }}
+  NEW_ENV: ${{ join('Hello World',',') }}
 jobs:
   Build:
     runs-on: ubuntu-latest
