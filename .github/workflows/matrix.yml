@@ -4,4 +4,4 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github }}
+      - run: echo ${{ toJSON(github) }}
