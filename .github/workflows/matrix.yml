@@ -2,6 +2,7 @@ name: Matrix workflow
 on: push
 jobs:
   Build:
+    continue-on-error: true
     strategy:
       matrix:
         operating-system: ["ubuntu-latest","windows-latest"]
@@ -9,4 +10,4 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - run: echo "In build job"
+      - run: Write-Host "Hello"
