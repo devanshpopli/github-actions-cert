@@ -1,8 +1,8 @@
 name: Matrix workflow
 on: push
 env:
-  MY_ENV: false
-  MY_ENV2: ${{ false }}
+  MY_ENV: 5<2
+  MY_ENV2: ${{ 5>2 }}
 jobs:
   Build:
     runs-on: ubuntu-latest
