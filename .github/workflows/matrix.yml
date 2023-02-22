@@ -1,13 +1,11 @@
 name: Matrix workflow
 on: push
+env:
+  MY_ENV: null
+  MY_ENV2: ${{ null }}
 jobs:
   Build:
-    continue-on-error: true
-    strategy:
-      matrix:
-        operating-system: ["ubuntu-latest","windows-latest"]
-    runs-on: ${{ matrix.operating-system }}
+    runs-on: ubuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - run: Write-Host "Hello"
+      - name: Print
+        run: echo ${{ env.MY_ENV }} and ${{ env.MY_ENV2 }}
