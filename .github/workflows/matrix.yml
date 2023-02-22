@@ -1,8 +1,8 @@
 name: Matrix workflow
 on: push
 env:
-  MY_ENV: null
-  MY_ENV2: ${{ null }}
+  MY_ENV: false
+  MY_ENV2: ${{ false }}
 jobs:
   Build:
     runs-on: ubuntu-latest
