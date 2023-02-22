@@ -75,3 +75,10 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
+  new-job:
+    needs: [lint,test]
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Check if-cond
+        run: echo "running on failure"
