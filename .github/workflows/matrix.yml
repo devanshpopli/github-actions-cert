@@ -3,6 +3,7 @@ on: push
 jobs:
   Build:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
     steps:
       - run: echo ${{ github.action }} 
       - run: echo ${{ github.action_path }}
