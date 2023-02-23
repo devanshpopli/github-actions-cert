@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
     steps:
-      - run: echo ${{ env.NAME }}
+      - run: echo ${{ vars.JOB_NAME }}
