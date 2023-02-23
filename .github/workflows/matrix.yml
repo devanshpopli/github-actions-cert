@@ -11,6 +11,8 @@ jobs:
     steps:
       - run: echo 'name=Priyanka Verma' >> $GITHUB_OUTPUT
         id: step1
+      - run: echo 'Name is ${{ steps.step1.outputs.name }}'
+      - run: echo '${{ steps }}'
   
   Deploy:
     runs-on: ubuntu-latest
