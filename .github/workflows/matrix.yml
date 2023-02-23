@@ -1,10 +1,10 @@
 name: Matrix workflow
 on: push
+env: 
+  NAME: Devansh Popli
 jobs:
   Build:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'push' }}
     steps:
-      - run: echo ${{ github.action }} 
-      - run: echo ${{ github.action_path }}
-      - run: echo ${{ github.job }}
+      - run: echo ${{ env.NAME }}
