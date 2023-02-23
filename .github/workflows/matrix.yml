@@ -5,11 +5,10 @@ env:
 jobs:
   Build:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
-    outputs:
-      NAME: ${{ steps.step1.outputs.name }}
     steps:
-      - run: echo 'name=Priyanka Verma' >> $GITHUB_OUTPUT
-        id: step1
-      - run: echo 'Name is ${{ steps.step1.outputs.name }}'
-      - run: echo '${{ toJSON(steps) }}'
+      - run: echo '${{ toJSON(runner) }}' 
+      - run: echo ${{ runner.name }} ${{ runner.os }} ${{ runner.temp }} ${{ runner.arch }}  ${{ runner.tool_cache }}
+      - run: |
+          mkdir ${{ runner.temp }}/new_folder
+          cd ${{ runner.temp }}
+          ls
