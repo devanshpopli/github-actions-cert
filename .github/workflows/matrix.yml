@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
     steps:
-      - run: echo ${{ github.actor }} ${{ github.job }} ${{ github.action }} ${{ github.toJSON(event) }} ${{ github.sha }} ${{ github.repository }} ${{ github.ref }}
+      - run: echo ${{ github.actor }} ${{ github.job }} ${{ github.action }} ${{ toJSON(github.event) }} ${{ github.sha }} ${{ github.repository }} ${{ github.ref }}
