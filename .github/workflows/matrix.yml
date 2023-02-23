@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
     steps:
-      - run: echo ${{ github.actor }} ${{ github.job }} ${{ github.action }} ${{ toJSON(github.event) }} ${{ github.sha }} ${{ github.repository }} ${{ github.ref }}
+      env:
+        NAME: Devansh Popli
+      - run: echo ${{ env.NAME }}
