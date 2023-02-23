@@ -13,8 +13,3 @@ jobs:
         id: step1
       - run: echo 'Name is ${{ steps.step1.outputs.name }}'
       - run: echo '${{ steps }}'
-  
-  Deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo 'Output is ${{ jobs.Build.outputs.NAME }}
