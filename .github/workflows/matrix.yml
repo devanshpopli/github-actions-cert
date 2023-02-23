@@ -6,4 +6,4 @@ jobs:
     steps:
       - run: echo ${{ github.action }} 
       - run: echo ${{ github.action_path }}
-      - run: echo ${{ github.event_name }}
+      - run: echo ${{ github.job }}
