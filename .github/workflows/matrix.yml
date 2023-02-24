@@ -1,6 +1,11 @@
 name: Workflow Example
 run-name: ${{ github.actor }} has created this workflow!
-on: push
+on:
+  push:
+    branches:
+      - main
+    branches-ignore:
+      - dev
 jobs:
   Test:
     runs-on: ubuntu-latest
