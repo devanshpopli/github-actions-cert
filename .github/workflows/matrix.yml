@@ -2,9 +2,8 @@ name: Workflow Example
 run-name: ${{ github.actor }} has created this workflow!
 on:
   push:
-    branches:
-      - main
-      - '!dev'
+    branches: main
+    paths: '.github/workflows/**'
 jobs:
   Test:
     runs-on: ubuntu-latest
