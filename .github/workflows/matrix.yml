@@ -4,6 +4,8 @@ env:
   NAME: Devansh Popli
 jobs:
   Build:
+    env:
+      NAME: Build-Name
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ env.NAME }}
