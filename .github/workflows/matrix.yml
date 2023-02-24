@@ -1,11 +1,9 @@
-name: Matrix workflow
+name: Workflow Example
+run-name: ${{ github.actor }} has created this workflow!
 on: push
-env: 
-  NAME: Devansh Popli
 jobs:
-  Build:
-    env:
-      NAME: Build-Name
-    runs-on: windows-latest
+  Test:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo $env:RUNNER_NAME $env:RUNNER_OS $env:RUNNER_TEMP $env:RUNNER_TOOL_CACHE
+      - uses: actions/checkout@v3.3.0
+      - uses: actions/setup-node@v3.6.0
