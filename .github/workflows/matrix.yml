@@ -8,4 +8,4 @@ jobs:
       NAME: Build-Name
     runs-on: windows-latest
     steps:
-      - run: echo $RUNNER_NAME $RUNNER_OS $RUNNER_TEMP $RUNNER_TOOL_CACHE
+      - run: echo $env:RUNNER_NAME $env:RUNNER_OS $env:RUNNER_TEMP $env:RUNNER_TOOL_CACHE
