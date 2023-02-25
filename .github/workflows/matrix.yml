@@ -1,11 +1,8 @@
 name: Workflow Example
 run-name: ${{ github.actor }} has created this workflow!
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        required: true
-        type: string
+  schedule:
+    cron: '* * * * *'
 jobs:
   Test:
     runs-on: ubuntu-latest
