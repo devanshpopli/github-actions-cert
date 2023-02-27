@@ -11,22 +11,27 @@ on:
 
 jobs:
   build:
-
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: ['ubuntu-latest','windows-latest']
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 14.x
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - uses: actions/upload-artifacts@main
+      with:
+        name: build-artifact
+        path: dist
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@main
+        with:
+          name: build-artifact
+      - run: ls
+        
