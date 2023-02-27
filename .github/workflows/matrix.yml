@@ -1,8 +1,6 @@
 name: Workflow Example
 run-name: ${{ github.actor }} has created this workflow!
-on:
-  schedule:
-    - cron: '* * * * *'
+on: ['pull_request']
 jobs:
   Test:
     runs-on: ubuntu-latest
