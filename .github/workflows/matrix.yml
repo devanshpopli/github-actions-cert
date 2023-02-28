@@ -1,4 +1,5 @@
-name: ${{ github.actor }} is testing Jobs
+name: Jobs Section
+run-name: ${{ github.actor }} is testing Jobs
 on:
   push:
     branches:
