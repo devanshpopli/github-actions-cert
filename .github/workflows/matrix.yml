@@ -1,8 +1,15 @@
-name: Workflow Example
-run-name: ${{ github.actor }} has created this workflow!
-on: ['pull_request']
+name: ${{ github.actor }} is testing Jobs
+on:
+  push:
+    branches:
+      - main
 jobs:
-  Test:
-    runs-on: ubuntu-latest
+  Build:
+    strategy:
+      matrix:
+        versions: [10,12,14]
+        os: ['ubuntu-latest','windows-latest']
+    runs-on: ${{ matrix.os }}
     steps:
-      - run: echo '${{ toJSON(github.event) }}'
+      - run: echo '2 jobs will run'
+      
