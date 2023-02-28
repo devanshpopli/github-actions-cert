@@ -1,16 +1,12 @@
-name: Jobs Section
-run-name: ${{ github.actor }} is testing Jobs
-on:
+name: Permissions Workflow
+on: 
   push:
     branches:
       - main
 jobs:
   Build:
-    strategy:
-      matrix:
-        versions: [10,12,14]
-        os: ['ubuntu-latest','windows-latest']
-    runs-on: ${{ matrix.os }}
+    permissions: {}
+    runs-on: ubuntu-latest
     steps:
-      - run: echo '2 jobs will run'
+      - uses: actions/checkout@v3      
       
