@@ -1,13 +1,20 @@
-name: Permissions Workflow
-on: 
+name: Outputs Job
+run-name: ${{ github.actor }} is defining job outputs
+on:
   push:
     branches:
       - main
 jobs:
-  Build:
-    permissions:
-      contents: none
+  Job1:
+    runs-on: ubuntu-latest
+    outputs:
+      my-name: ${{ steps.output-step.outputs.name }}
+    steps:
+      - run: echo 'name=Jignesh Kumar' >> $GITHUB_OUTPUT
+        id: output-step
+
+  Job2:
+    needs: Job1
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3      
-      
+      - run: echo ${{ needs.Job1.outputs.my-name }}
