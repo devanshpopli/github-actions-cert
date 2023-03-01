@@ -16,6 +16,6 @@ runs:
   steps:
     - run: echo ${{ inputs.name }} is ${{ inputs.age }} years old.
       shell: bash
-    - run: echo "final_result=true" >> $GITHUB_OUTPUTS
+    - run: echo 'final_result=true' >> $GITHUB_OUTPUTS
       id: output-step
       shell: bash
