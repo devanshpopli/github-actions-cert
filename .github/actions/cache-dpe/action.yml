@@ -12,5 +12,6 @@ inputs:
 runs:
   using: composite
   steps:
+    - uses: actions/checkout
     - run: echo ${{ inputs.name }} is ${{ inputs.age }} years old.
       shell: bash
