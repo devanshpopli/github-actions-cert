@@ -9,8 +9,13 @@ inputs:
     description: 'Age of the person'
     type: number
     required: true
+outputs:
+  result: ${{ steps.output-step.outputs.final_result }}
 runs:
   using: composite
   steps:
     - run: echo ${{ inputs.name }} is ${{ inputs.age }} years old.
+      shell: bash
+    - run: echo "final_result=true" >> $GITHUB_OUTPUTS
+      id: output-step
       shell: bash
