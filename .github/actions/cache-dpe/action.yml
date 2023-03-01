@@ -10,7 +10,8 @@ inputs:
     type: number
     required: true
 outputs:
-  result: ${{ steps.output-step.outputs.final_result }}
+  result: 
+    value: ${{ steps.output-step.outputs.final_result }}
 runs:
   using: composite
   steps:
