@@ -1,0 +1,8 @@
+name: Workflow Caller
+on:
+  push:
+    branches:
+      - main
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/workflow1.myl

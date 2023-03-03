@@ -1,0 +1,12 @@
+name: Workflow Called
+on:
+  workflow_call:
+    inputs:
+      name: 
+        required: true
+        type: string
+jobs:
+  dispay_name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'My name is ${{ inputs.name }}'
