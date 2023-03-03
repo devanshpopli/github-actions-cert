@@ -13,4 +13,4 @@ jobs:
   calculation:
     runs-on: windows-latest
     steps:
-      -  run: echo ${{ toJSON(github.event) }}
+      -  run: echo ${{ github.event }}
