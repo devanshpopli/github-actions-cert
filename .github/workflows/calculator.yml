@@ -30,7 +30,7 @@ jobs:
           echo 'result=$result' >> $env:GITHUB_OUTPUT
          id: result-output
   display-result:
-    needs:
+    needs: calculation
     runs-on: ubuntu-latest
     steps:
       - run: echo 'Your result is ${{ needs.calculation.outputs.result }}'
