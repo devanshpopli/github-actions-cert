@@ -1,24 +1,14 @@
 name: testing
 on:
-  workflow_dispatch:
-    inputs:
-      number1:
-        description: 'Input for Number 1'
-        required: true
-        type: number
-      number2:
-        description: 'Input for Number 2'
-        required: true
-        type: number
-      operation:
-        description: 'Choose the operation to perform'
-        type: choice
-        required: true
-        options:
-          - '+'
-          - '-'
-          - '/'
-          - '*'
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  labels:
+    types:
+      - created
 jobs:
   calculation:
     runs-on: windows-latest
