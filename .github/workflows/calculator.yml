@@ -1,0 +1,28 @@
+name: Calculator2
+on:
+  workflow_dispatch:
+    inputs:
+      number1:
+        description: 'Input for Number 1'
+        required: true
+        type: number
+      number2:
+        description: 'Input for Number 2'
+        required: true
+        type: number
+      operation:
+        description: 'Choose the operation to perform'
+        type: choice
+        required: true
+        options:
+          - '+'
+          - '-'
+          - '/'
+          - '*'
+jobs:
+  calculation:
+    runs-on: windows-latest
+    steps:
+      -  run: |
+          $result = ${{ inputs.number1 }}${{ inputs.operation }}${{ inputs.number2 }}
+          echo $result
