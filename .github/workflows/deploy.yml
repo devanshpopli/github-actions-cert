@@ -21,13 +21,21 @@ on:
           - '*'
 jobs:
   calculation:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - if: inputs.operation == '+'
-        run: echo ${{ inputs.number1 }}+${{ inputs.number2 }}
+        run: |
+          $sum = ${{ inputs.number1 }}+${{ inputs.number2 }}
+          echo $sum
       - if: inputs.operation == '-'
-        run: echo ${{ inputs.number1 }}-${{ inputs.number2 }}
+        run: |
+          $sum = ${{ inputs.number1 }}-${{ inputs.number2 }}
+          echo $sum
       - if: inputs.operation == '/'
-        run: echo ${{ inputs.number1 }}/${{ inputs.number2 }}
+        run: |
+          $sum = ${{ inputs.number1 }}/${{ inputs.number2 }}
+          echo $sum
       - if: inputs.operation == '*'
-        run: echo ${{ inputs.number1 }}*${{ inputs.number2 }}
+        run: |
+          $sum = ${{ inputs.number1 }}*${{ inputs.number2 }}
+          echo $sum
