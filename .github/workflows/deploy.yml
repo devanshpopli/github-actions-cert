@@ -1,7 +1,7 @@
 name: testing
 on:
   schedule:
-    - cron: * * * * *
+    - cron: '* * * * *'
 jobs:
   calculation:
     runs-on: ubuntu-latest
