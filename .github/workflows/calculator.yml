@@ -1,4 +1,4 @@
-name: Calculator2
+name: Calculator
 on:
   workflow_dispatch:
     inputs:

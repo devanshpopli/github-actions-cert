@@ -1,4 +1,4 @@
-name: Calculator
+name: testing
 on:
   workflow_dispatch:
     inputs:
@@ -23,19 +23,4 @@ jobs:
   calculation:
     runs-on: windows-latest
     steps:
-      - if: inputs.operation == '+'
-        run: |
-          $sum = ${{ inputs.number1 }}+${{ inputs.number2 }}
-          echo $sum
-      - if: inputs.operation == '-'
-        run: |
-          $sum = ${{ inputs.number1 }}-${{ inputs.number2 }}
-          echo $sum
-      - if: inputs.operation == '/'
-        run: |
-          $sum = ${{ inputs.number1 }}/${{ inputs.number2 }}
-          echo $sum
-      - if: inputs.operation == '*'
-        run: |
-          $sum = ${{ inputs.number1 }}*${{ inputs.number2 }}
-          echo $sum
+      -  run: ${{ toJSON(github.event) }}
