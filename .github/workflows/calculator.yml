@@ -27,7 +27,7 @@ jobs:
     steps:
       -  run: |
           $result = ${{ inputs.number1 }}${{ inputs.operation }}${{ inputs.number2 }}
-          echo 'result=$result' >> $env:GITHUB_OUTPUT
+          echo result=$result >> $env:GITHUB_OUTPUT
          id: result-output
   display-result:
     needs: calculation
