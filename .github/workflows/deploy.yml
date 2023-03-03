@@ -1,16 +1,33 @@
-name: Testing Composite Actions
+name: Calculator
 on:
-  push:
-    branches:
-      - main
+  workflow-dispatch:
+    inputs:
+      number1:
+        description: 'Input for Number 1'
+        required: true
+        type: number
+      number2:
+        description: 'Input for Number 2'
+        required: true
+        type: number
+      operation:
+        description: 'Choose the operation to perform'
+        type: choice
+        required: true
+        options:
+          - '+'
+          - '-'
+          - '/'
+          - '*'
 jobs:
-  job1:
+  calculation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/cache-dpe
-        id: composite-action
-        with:
-          name: 'Devansh Popli'
-          age: 24
-      - run: echo 'output is ${{ steps.composite-action.outputs.result }}'
+      - if: inputs.operation == '+'
+        run: echo ${{ inputs.number1 }}+${{ inputs.number2 }}
+      - if: inputs.operation == '-'
+        run: echo ${{ inputs.number1 }}-${{ inputs.number2 }}
+      - if: inputs.operation == '/'
+        run: echo ${{ inputs.number1 }}/${{ inputs.number2 }}
+      - if: inputs.operation == '*'
+        run: echo ${{ inputs.number1 }}*${{ inputs.number2 }}
