@@ -22,7 +22,15 @@ on:
 jobs:
   calculation:
     runs-on: windows-latest
+    outputs:
+      result: ${{ steps.result-output.outputs.result }}
     steps:
       -  run: |
           $result = ${{ inputs.number1 }}${{ inputs.operation }}${{ inputs.number2 }}
-          echo $result
+          echo 'result=$result' >> $env:GITHUB_OUTPUT
+         id: result-output
+  display-result:
+    needs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Your result is ${{ needs.calculation.outputs.result }}'
