@@ -6,3 +6,5 @@ on:
 jobs:
   call-workflow:
     uses: ./.github/workflows/workflow1.yml
+    with:
+      name: Dean Daley
