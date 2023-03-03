@@ -5,4 +5,4 @@ on:
       - main
 jobs:
   call-workflow:
-    uses: ./.github/workflows/workflow1.myl
+    uses: ./.github/workflows/workflow1.yml
