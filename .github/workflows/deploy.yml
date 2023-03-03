@@ -1,6 +1,6 @@
 name: Calculator
 on:
-  workflow-dispatch:
+  workflow_dispatch:
     inputs:
       number1:
         description: 'Input for Number 1'
