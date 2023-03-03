@@ -1,14 +1,7 @@
 name: testing
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  label:
-    types:
-      - created
+  schedule:
+    - cron: * * * * *
 jobs:
   calculation:
     runs-on: ubuntu-latest
