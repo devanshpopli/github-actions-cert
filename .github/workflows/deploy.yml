@@ -11,6 +11,6 @@ on:
       - created
 jobs:
   calculation:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      -  run: echo ${{ github.event }}
+      -  run: echo ${{ toJSON(github.event) }}
