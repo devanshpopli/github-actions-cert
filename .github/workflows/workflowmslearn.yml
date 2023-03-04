@@ -10,4 +10,9 @@ jobs:
       matrix:
         os: ['ubuntu-latest','windows-latest']
     steps:
-      - run: echo ${{ matrix.os }}
+      - name: Code Checkout
+        uses: actions/checkout@main
+      - name: Install Node.js
+        uses: actions/setup-node@main
+        with:
+          node-version: 10
