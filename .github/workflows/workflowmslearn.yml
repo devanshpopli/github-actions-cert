@@ -1,0 +1,11 @@
+name: Matrix Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  first-job:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ['ubuntu-latest','windows-latest']
