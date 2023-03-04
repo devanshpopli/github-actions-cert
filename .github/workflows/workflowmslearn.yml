@@ -1,22 +1,21 @@
-name: Matrix Workflow
+name: Artifacts Workflow
 on:
   push:
     branches:
       - main
 jobs:
   first-job:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: ['ubuntu-latest']
-        version: [10,12,14]
-        exclude:
-          - os: ubuntu-latest
-            version: 12
+    runs-on: ubuntu-latest
     steps:
-      - name: Code Checkout
-        uses: actions/checkout@main
-      - name: Install Node.js
-        uses: actions/setup-node@main
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.versions }}
+          node-version: 14
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Build Artifacts
+          path: index.html
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Test Artifacts
+          path: src/test
