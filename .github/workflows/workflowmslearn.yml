@@ -7,6 +7,7 @@ env:
   NAME: Devansh
 jobs:
   job1:
+    if: $NAME == 'Devansh'
     name: My_Job
     runs-on: ubuntu-latest
     steps:
