@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: npm ci
-  job1:
+  job2:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
