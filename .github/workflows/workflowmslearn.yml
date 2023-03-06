@@ -10,5 +10,5 @@ jobs:
     name: My_Job
     runs-on: ubuntu-latest
     steps:
-      - run: .\file.ps1
+      - run: echo $env:NAME
         shell: pwsh
