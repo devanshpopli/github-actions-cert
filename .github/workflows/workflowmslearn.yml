@@ -1,13 +1,11 @@
-name: Environment Workflow
+name: Cache Job
 on:
   push:
     branches:
       - main
-env:
-  NAME: Devansh
 jobs:
   job1:
-    name: My_Job
     runs-on: ubuntu-latest
     steps:
-      - run: echo $env:NAME
+      - uses: actions/checkout@v1
+      - run: npm ci
