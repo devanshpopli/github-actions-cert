@@ -1,21 +1,13 @@
-name: Artifacts Workflow
+name: Environment Workflow
 on:
   push:
     branches:
       - main
+env:
+  NAME: Devansh
 jobs:
-  first-job:
+  job1:
+    name: My_Job
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
-      - uses: actions/upload-artifact@v1
-        with:
-          name: Build Artifacts
-          path: index.html
-      - uses: actions/upload-artifact@v1
-        with:
-          name: Test Artifacts
-          path: src/test
+      - run: echo $NAME
