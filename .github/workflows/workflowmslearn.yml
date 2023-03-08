@@ -10,3 +10,4 @@ jobs:
     steps:
       - run: echo '::error::This is a custom error by Devansh'
       - run: echo '::debug::This is a debug message'
+      - run: echo '::warning::This is a warning message'
