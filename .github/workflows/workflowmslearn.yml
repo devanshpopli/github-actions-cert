@@ -7,4 +7,4 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: '::error::This is a custom error by Devansh'
+      - run: echo '::error::This is a custom error by Devansh'
