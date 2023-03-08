@@ -8,3 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo '::error::This is a custom error by Devansh'
+      - run: echo '::debug::This is a debug message'
