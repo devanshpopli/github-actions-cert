@@ -1,13 +1,9 @@
-name: Workflow Commands
+name: Deploy to Azure
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  pull_request:
+    types:
+      - labelled
 jobs:
-  job1:
+  Deploy:
     runs-on: ubuntu-latest
-    steps:
-      - run: echo '::error::This is a custom error by Devansh'
-      - run: echo '::debug::This is a debug message'
-      - run: echo '::warning::This is a warning message'
+    if: contains(github.event.pull_request.labels.*.name,'stage')
