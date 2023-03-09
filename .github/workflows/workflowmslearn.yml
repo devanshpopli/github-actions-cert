@@ -1,11 +1,12 @@
-name: Deploy to Azure
+name: Functions
 on:
-  pull_request:
-    types:
-      - labelled
+  push:
+    branches:
+      - main
+      - dev
+      - feature
 jobs:
-  Deploy:
+  job1:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name,'stage')
     steps:
-      - run: echo hello
+      - run: echo ${{ join(github.event.push.branches.*.name) }}
